@@ -1,0 +1,13 @@
+data.table
+ggplot2
+stringr
+dplyr
+cowplot
+edgeR
+limma
+SummarizedExperiment
+ggpubr
+reshape2
+EnhancedVolcano
+ggpointdensity
+viridis
