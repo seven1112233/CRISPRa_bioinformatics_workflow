@@ -20,7 +20,7 @@ Run `Rscript bin/CRISPRa_workflow_T0med3mad_normbyNTC.R -h` in your terminal to 
 A simple example :sun_with_face::
 ```bash
 Rscript bin/CRISPRa_workflow_T0med3mad_normbyNTC.R \
-                           -i 250826_SP2_HCT116_mageck.count.txt \
+                           -i data/250826_SP2_HCT116_mageck.count.txt \
                            -o 250826_SP2_HCT116_voom \
                            -p 250826_SP2_HCT116 \
                            -l SP2_HCT116 \
