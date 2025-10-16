@@ -13,7 +13,7 @@ git clone https://github.com/seven1112233/CRISPRa_bioinformatics_workflow.git </
 Run `Rscript CRISPRa_workflow_T0med3mad_normbyNTC.R -h` in your terminal to get details.
 
 A simple example:
-<pre>Rscript CRISPRa_workflow_T0med3mad_normbyNTC.R\n
+<pre>Rscript bin/CRISPRa_workflow_T0med3mad_normbyNTC.R\n
 
                            -i SP1_K562_mageck.count.txt\n
 
