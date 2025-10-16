@@ -1,0 +1,2 @@
+# CRISPRa_bioinformatics_workflow
+Bioinformatics pipeline for CRISPR activation screening
