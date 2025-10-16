@@ -11,7 +11,7 @@ To install the last version use the following command in your terminal:
 mkdir CRISPRa_voom 
 cd CRISPRa_voom
 git clone https://github.com/seven1112233/CRISPRa_bioinformatics_workflow.git
-cd CRISPRa_bioinformatics_workflow</pre>
+cd CRISPRa_bioinformatics_workflow
 ```
 **:star: Examples**
 
