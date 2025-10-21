@@ -1,6 +1,8 @@
 # :cat: CRISPRa bioinformatics workflow
 
 Bioinformatics pipeline based on limma-voom strategy for CRISPR activation screening data.
+<img width="1341" height="637" alt="image" src="https://github.com/user-attachments/assets/d52c1ca6-e920-4456-94ad-66acf7a7f7dc" />
+
 
 **:paw_prints: Install**
 
