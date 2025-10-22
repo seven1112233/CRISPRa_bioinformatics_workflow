@@ -59,24 +59,47 @@ pkg_check <- function(pkg){
 }
 
 # List of required packages
-packages <- c(
+packages1 <- c(
   "data.table",
   "ggplot2",
   "stringr",
   "dplyr",
   "cowplot",
-  "edgeR",
-  "limma",
-  "SummarizedExperiment",
   "ggpubr",
   "reshape2",
-  "EnhancedVolcano",
   "ggpointdensity",
   "viridis"
 )
 
+# Install and load package via BiocManager
+pkg_check_BiocManager <- function(pkg) {
+  # Check and install BiocManager if not available
+  if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager", repos = "https://cloud.r-project.org/")
+  }
+  
+  # Check and install target package if not available
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    BiocManager::install(pkg, ask = FALSE, update = FALSE)
+  }
+  
+  # Load package quietly
+  suppressPackageStartupMessages(
+    library(pkg, character.only = TRUE, quietly = TRUE)
+  )
+}
+
+# List of required packages
+packages2 <- c(
+  "edgeR",
+  "limma",
+  "SummarizedExperiment",
+  "EnhancedVolcano"
+  )
+
 # Check and load all
-lapply(packages, pkg_check)
+lapply(packages1, pkg_check)
+lapply(packages2, pkg_check_BiocManager)
 cat("----------------------------------------------------------------------------------------\n")
 cat("Start analysis...\n")
 suppressMessages(suppressWarnings({
@@ -347,4 +370,5 @@ suppressMessages(suppressWarnings({
   cat(paste0("The analysis results have been saved in ",outDir), "\n")
   cat("Meow! 😺\n")
   cat("Well done! Your are excellent!\n")
+
 }))
