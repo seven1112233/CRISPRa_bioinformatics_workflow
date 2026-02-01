@@ -139,7 +139,7 @@ suppressMessages(suppressWarnings({
           plot.title = element_text(size=12))
     
   ggsave(paste0(outDir,prefix,"Ref.aveLogCPM_dist.pdf"),
-         width = 4,height = 3,p)
+         width = 4,height = 3, limitsize= F, p)
   
   
   # Step 2: Normalization with NTCs
@@ -213,7 +213,7 @@ suppressMessages(suppressWarnings({
   
   p<-plot_grid(p1,p3,nrow = 1)
   ggsave(paste0(outDir,prefix,"log_norm_counts_dist.pdf"),
-         width = 4*2,height = 3,p)
+         width = 4*2,height = 3,limitsize= F, p)
   
   
   # Fit linear model
@@ -246,7 +246,7 @@ suppressMessages(suppressWarnings({
   }
   CPM_corrall<-plot_grid(plotlist = CPM_corr,nrow = 1)
   ggsave(paste0(outDir,prefix,"sgRNA_differential_abundance_limma_log2normedC_corr.pdf"),
-         width = 4.5*length(levels(sample_info$Time)),height = 4,CPM_corrall)
+         width = 4.5*length(levels(sample_info$Time)),height = 4,limitsize= F, CPM_corrall)
   
   # contrast
   my_compa<-colnames(contrast_matrix)
@@ -360,11 +360,11 @@ suppressMessages(suppressWarnings({
   }
   my_compa_result_plotall<-plot_grid(plotlist = my_compa_result_plot,nrow = 1)
   ggsave(paste0(outDir,prefix,"sgRNA_differential_abundance_limma_volcano.pdf"),
-         width = 7*length(my_compa),height = 5.6,my_compa_result_plotall)
+         width = 7*length(my_compa),height = 5.6,limitsize= F, my_compa_result_plotall)
   
   my_fry_results_plotall<-plot_grid(plotlist = my_fry_results_plot,nrow = 1)
   ggsave(paste0(outDir,prefix,"promoter_differential_abundance_limma_volcano.pdf"),
-         width = 6*length(my_compa),height = 5.6,my_fry_results_plotall)
+         width = 6*length(my_compa),height = 5.6,limitsize= F, my_fry_results_plotall)
   
   cat(rep("🐱", nrow(sample_info)), "\n")
   cat(paste0("The analysis results have been saved in ",outDir), "\n")
@@ -372,3 +372,4 @@ suppressMessages(suppressWarnings({
   cat("Well done! Your are excellent!\n")
 
 }))
+
