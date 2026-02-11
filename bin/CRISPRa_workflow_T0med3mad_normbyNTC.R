@@ -331,6 +331,8 @@ suppressMessages(suppressWarnings({
       adjust.method="BH"
     )
     my_fry_results_all[[k]]<-merge(my_compa_result_seq_median,my_fry_results[[k]],by.x="promoter",by.y="row.names")
+    my_fry_results_all[[k]]$zscore<-scale(my_fry_results_all[[k]]$LFC_median)[,1]
+    
     write.table(my_fry_results_all[[k]],paste0(outDir, prefix,my_compa[k],"_promoter_level_fry_results.txt"),sep = '\t',row.names = F)
     
     dat<-my_fry_results_all[[k]]
@@ -372,4 +374,5 @@ suppressMessages(suppressWarnings({
   cat("Well done! Your are excellent!\n")
 
 }))
+
 
